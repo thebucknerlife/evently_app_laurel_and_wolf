@@ -14,6 +14,12 @@ class Event
   #
   # Assumes that revenue would never be present but blank (e.g. {revenue: ''}). Would need to 
   # to test for blankness otherwise.
+  #
+  # I'd write tests around this. Callbacks can be brittle so there may be a better way to store this
+  # info. Lots of possible solutions for handling money in Rails. Could have also done a map-reduce
+  # to convert the String attribute in Mongo to a float then summed. Given query performance was important
+  # I decided to transform the data on save instead of while querying. Created a new attribute so the original
+  # value would also be around for debugging/refactoring later.
   before_create do |doc|
     if doc.properties && doc.properties.revenue
       doc.properties.revenue_in_cents = (doc.properties.revenue.to_f * 100).to_i
