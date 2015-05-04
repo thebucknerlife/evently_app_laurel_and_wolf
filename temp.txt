@@ -1,1 +1,0 @@
-rails g model properties url title path referrer shippingMethod revenue
