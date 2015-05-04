@@ -6,4 +6,5 @@ class Properties
   field :referrer, type: String
   field :shippingMethod, type: String
   field :revenue, type: String
+  field :revenue_in_cents, type: Integer
 end

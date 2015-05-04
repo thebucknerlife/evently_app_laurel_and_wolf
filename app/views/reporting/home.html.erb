@@ -1,0 +1,27 @@
+<h1 class='text-primary'>Metrics</h1>
+
+<h3>Referrer Pages</h3>
+
+<p>How many customers visited <b>/pricing</b> from <b>https://example.com</b> within <b>the last 24 hours</b>?</p>
+
+<ul>
+  <li><%= pluralize @referrer_pages.distinct('userId').count, 'customer' %></li>
+  <li><%= pluralize @referrer_pages.count, 'page view' %></li>
+</ul>
+
+<h3>Customer Purchases</h3>
+
+<p>How many customers purchased the <b>$39.99 item</b> within <b>the last 24 hours</b>?</p>
+
+<ul>
+  <li><%= pluralize @purchases.count, 'customer' %></li>
+  <li>Total revenue was $<%= @purchases.sum('properties.revenue_in_cents').to_f/100 %></li>
+</ul>
+
+<h3>Customers Logged In</h3>
+
+<p>How many customers (logged in) were on the site or app in <b>the last 24 hours</b>?</p>
+
+<ul>
+  <li><%= pluralize @logged_in_customers.distinct('userId').count, 'customer' %></li>
+</ul>

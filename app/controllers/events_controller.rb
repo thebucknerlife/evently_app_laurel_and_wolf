@@ -13,7 +13,7 @@ class EventsController < ApplicationController
 private
 
   def event_params
-    params.permit(:version, :type, :timestamp, properties: [:url, :title, :path, :referrer, :shippingMethod, :revenue], traits: [:email, :name, 'friendCount', 'subscriptionPlan'])
+    params.permit(:version, :type, :timestamp, 'userId', :event, properties: [:url, :title, :path, :referrer, :shippingMethod, :revenue], traits: [:email, :name, 'friendCount', 'subscriptionPlan'])
   end
 
 end
