@@ -1,0 +1,1 @@
+{"version"=>1, "type"=>"identify", "userId"=>"019mr8mf4r", "traits"=>{"email"=>"achilles@example.com", "name"=>"Achilles", "subscriptionPlan"=>"Premium", "friendCount"=>29}, "timestamp"=>"2012-12-02T00:30:08.276Z"}
