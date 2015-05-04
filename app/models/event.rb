@@ -20,3 +20,8 @@ class Event
     end
   end
 end
+
+# Validations would be my next step here. I'm assuming the webhooks channel is stable and the chances
+# of invalid data coming through are low. But with more time I'd add some conditional validations to 
+# make sure the metrics we're using are never tainted. Check that the right fields are populated depending
+# on the type of Event (here and in the embedded models).

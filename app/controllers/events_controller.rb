@@ -1,5 +1,6 @@
 class EventsController < ApplicationController
 
+  # Events are posted here by the webhook channel.
   def create
     event = Event.new(event_params)
 
@@ -9,6 +10,9 @@ class EventsController < ApplicationController
       render status: 400, json: { 'OK' => false }
     end
   end
+
+  # I'd want to setup a error logging system, email an admin, or post to Slack/Hipchat if there was
+  # an error here. Things can get really screwed up when analytics are bad and no one notices.
 
 private
 
